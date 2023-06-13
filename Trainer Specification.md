@@ -70,15 +70,16 @@
 - After the last dit of P is sent, 3 elements are added (inter-character).
 - After the word PARIS - 7 elements are used.
 
-Thus:
-P = di da da di = 1 1 3 1 3 1 1 (3) = 14 elements
-A = di da = 1 1 3 (3) = 8 elements
-R = di da di = 1 1 3 1 1 (3) = 10 elements
-I = di di = 1 1 1 (3) = 6 elemets
-S = di di di = 1 1 1 1 1 [7] = 12 elements
-Total = 50 Elements
-() = inter-character
-[] = inter-word
+Thus:  
+P = di da da di = 1 1 3 1 3 1 1 (3) = 14 elements.  
+A = di da = 1 1 3 (3) = 8 elements.  
+R = di da di = 1 1 3 1 1 (3) = 10 elements.  
+I = di di = 1 1 1 (3) = 6 elemets.  
+S = di di di = 1 1 1 1 1 [7] = 12 elements.  
+
+Total = 50 Elements.  
+() = inter-character.  
+[] = inter-word.  
 
 If you send PARIS 5 times in a minute (5WPM) you have sent 250 elements (using correct spacing). 250 elements into 60 second per minute = 240 milliseconds per element.
 
