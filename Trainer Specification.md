@@ -71,11 +71,11 @@
 - After the word PARIS - 7 elements are used.
 
 Thus:
-P = di da da di = 1 1 3 1 3 1 1 (3) = 14 elements
-A = di da = 1 1 3 (3) = 8 elements
-R = di da di = 1 1 3 1 1 (3) = 10 elements
-I = di di = 1 1 1 (3) = 6 elemets
-S = di di di = 1 1 1 1 1 [7] = 12 elements
+|P = di da da di = 1 1 3 1 3 1 1 (3) = 14 elements|
+|A = di da = 1 1 3 (3) = 8 elements|
+|R = di da di = 1 1 3 1 1 (3) = 10 elements|
+|I = di di = 1 1 1 (3) = 6 elemets|
+|S = di di di = 1 1 1 1 1 [7] = 12 elements|
 Total = 50 Elements
 () = inter-character
 [] = inter-word
