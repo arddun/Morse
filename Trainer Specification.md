@@ -2,15 +2,14 @@
 
 
 
-1. Send the first two letters, i.e. a b, few times to get the used to the sound.
-2. Then send a set of those two letters, i.e. a b, randomly in blocks of five characters like a b a b b for five times.
-3. Repeat the above without showing the letter.
-4. Repeat the above but this time allowed key-stroke input. Display the input on screen then average the result. If less than 90% accuracy, start from point 1 again.
-5. If 90%+ accuracy achieved, then add a letter, i.e. c, to the previous set, but still sending in blocks of five characters.
-6. When reached the end of alphabet, start to add numbers to the sequence and repeat the process.
-7. Able to adjust WPM speed.
-8. Able to adjust pitch tone.
-9. Able to receive input from morse-key and determine the character sent.
+1. Begin with an alphabet of two letters, 'a'  and 'b'. Sound the letter 'a' ten times with a one second silent pause between letters. Pause for one second then sound the letter 'b' ten times with a one second silent pause between letters. 
+2. Choose a five letter random selection of letters from the alphabet. Display the sequence while sounding the letters sequentially with a one second pause between letters. Repeat five times each time with a different random sequence. 
+3. Repeat 2 but after each sequence is sounded wait for the user to enter their guess as to which sequence they had just heard. Display the correct sequence on screen. Compare the correct sequence with the user's guess. If, after five sequences have been heard and evaluated, the user had more than 1 sequence incorrect, repeat this step.
+4. Otherwise add the next letter in the English alphanumeric alphabet to our alphabet (numbers follow letters). Sound the new character ten times with a one second pause between letters to accustom the user to the sound. Return to step 2.
+5. The user should be able to adjust the word per minute (WPM) speed.
+6. The user should be allowed to chose the frequency of the tone that they hear. The default will be A=440.
+7. In later iterations the user will receive input from a simulated morse-key to determine the character sent.
+8. In later iterations the user will be sent real world text sequences chosen from random publications.
 
 
 
