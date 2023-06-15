@@ -1,39 +1,77 @@
 from Tone import Tone
 
-# This is the letter 'P'
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.24)     # intra-char
-Tone.sine(750, duration=0.72)   # da
-Tone.sine(0, duration=0.24)     # intra-char
-Tone.sine(750, duration=0.72)   # da
-Tone.sine(0, duration=0.24)     # intra-char
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.72)     # intra-char
+speed = int(input("Please chose WPM speed:\n"))
+value = input("Please enter a letter:\n")
 
-# This is the letter 'A'
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.24)     # intra-char
-Tone.sine(750, duration=0.72)   # da
-Tone.sine(0, duration=0.72)     # intra-char
+# Speed calculation at 1 WPM
+di = Tone.sine(750, duration=1.2/speed)
+dah = Tone.sine(750, duration=3.6/speed)
+intra_char = Tone.sine(0, duration=1.2/speed)
+inter_char = Tone.sine(0, duration=3.6/speed)
+intra_word = Tone.sine(0, duration=8.4/speed)
 
-# This is the letter 'R'
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.24)     # intra-char
-Tone.sine(750, duration=0.72)   # da
-Tone.sine(0, duration=0.24)     # intra-char
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.72)     # intra-char
+v1 = str(value)
 
-# This is the letter 'I'
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.24)     # intra-char
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.72)     # intra-char
+if v1 == 'a':
+    Tone.sine(750, duration=di)   # di
+    Tone.sine(0, duration=intra_char)     # intra-char
+    Tone.sine(750, duration=dah)   # da
+elif v1 == 'b':
+    Tone.sine(750, duration=0.18)   # da
+    Tone.sine(0, duration=0.06)     # intra-char
+    Tone.sine(750, duration=0.06)   # di
+    Tone.sine(0, duration=0.06)     # intra-char
+    Tone.sine(750, duration=0.06)   # di
+    Tone.sine(0, duration=0.06)     # intra-char
+    Tone.sine(750, duration=0.06)   # di
+elif v1 == 'c':
+    Tone.sine(750, duration=0.18)   # da
+    Tone.sine(0, duration=0.06)     # intra-char
+    Tone.sine(750, duration=0.06)   # di
+    Tone.sine(0, duration=0.06)     # intra-char
+    Tone.sine(750, duration=0.18)   # da
+    Tone.sine(0, duration=0.06)     # intra-char
+    Tone.sine(750, duration=0.06)   # di
 
-# This is the letter 'S'
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.24)     # intra-char
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.24)     # intra-char
-Tone.sine(750, duration=0.24)   # di
-Tone.sine(0, duration=0.72)     # intra-char
+
+
+
+
+# # The below PARIS test word is sent a 20 WPM
+# # This is the letter 'P'
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.06)     # intra-char
+# Tone.sine(750, duration=0.18)   # da
+# Tone.sine(0, duration=0.06)     # intra-char
+# Tone.sine(750, duration=0.18)   # da
+# Tone.sine(0, duration=0.06)     # intra-char
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.18)     # intra-char
+
+# # This is the letter 'A'
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.06)     # intra-chara
+# Tone.sine(750, duration=0.18)   # da
+# Tone.sine(0, duration=0.18)     # intra-char
+
+# # This is the letter 'R'
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.06)     # intra-char
+# Tone.sine(750, duration=0.18)   # da
+# Tone.sine(0, duration=0.06)     # intra-char
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.18)     # intra-char
+
+# # This is the letter 'I'
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.06)     # intra-char
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.18)     # intra-char
+
+# # This is the letter 'S'
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.06)     # intra-char
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.06)     # intra-char
+# Tone.sine(750, duration=0.06)   # di
+# Tone.sine(0, duration=0.42)     # intra-word
