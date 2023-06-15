@@ -5,6 +5,7 @@
 // Author : alanm
 //
 // Date : Friday 27th November
+// Amended : Thursday 15th June 2023
 //
 
 #include <stdio.h>
@@ -22,7 +23,7 @@
 char message[128];
 
 // 2D array which holds the morse code ranging from A-Z then 0-9
-char morse[][6] = {{".--"},{"-..."},{"-.-."},{"-.."},{"."},{"..-."},
+char morse[][6] = {{".-"},{"-..."},{"-.-."},{"-.."},{"."},{"..-."},
                    {"--."},{"...."},{".."},{".---"},{"-.-"},{".-.."},
                    {"--"},{"-."},{"---"},{".--."},{"--.-"},{".-."},
                    {"..."},{"-"},{"..-"},{"...-"},{".--"},{"-..-"},
@@ -71,7 +72,7 @@ void morseConversion ()
     if (*p >= '0' && *p <= '9')
     {
       i = *p;                // convert char to an integer
-      q = morse [i-21];      // use the char code as an index into the morse array
+      q = morse [i-22];      // use the char code as an index into the morse array
       sendMorseCharacter (q);// passes a pointer to the correct morse string to the function
       Serial.println (q);    // send a message back to us showing what we're doing
     }
