@@ -1,6 +1,8 @@
 # Sine Wave formula from https://en.wikipedia.org/wiki/Sine_wave
 # Tutorial from Jammin' Coder - Generating Sound from Sine Waves in Python - YouTube
 
+# Install pygame and numpy with "pip3 install xxxxx"
+
 import pygame
 import numpy
 import math
