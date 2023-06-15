@@ -5,18 +5,17 @@
 // Author : alanm
 //
 // Date : Friday 27th November
-// Amended : Thursday 15th June 2023
 //
 
 #include <stdio.h>
 #include <ctype.h>
 
-#define LED        13
-#define GAPINTRA  100  // gap between individual dots and dashes
-#define GAPCHAR   200  // gap between ASCII characters (200 because we always terminate a char with a GAPINTRA
-#define GAPWORD   600  // gap between words (600 not 700 for a similar reason)
-#define DOT       100  // length of a dot
-#define DASH      300  // length of a dash
+#define LED          13  // The LED we're using
+#define DOT         100  // length of a dot
+#define DASH      3*DOT  // length of a dash
+#define GAPINTRA    DOT  // gap between individual dots and dashes
+#define GAPCHAR   2*DOT  // gap between ASCII characters (200 because we always terminate a dot/dash with a GAPINTRA)
+#define GAPWORD   6*DOT  // gap between words (600 not 700 for a similar reason)
 
 
 // to hold the message that we send - maximum of 128 bytes
