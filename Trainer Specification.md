@@ -2,10 +2,10 @@
 
 
 
-1. Begin with an alphabet of two letters, 'a'  and 'b'. Sound the letter 'a' ten times with a one second silent pause between letters. Pause for one second then sound the letter 'b' ten times with a one second silent pause between letters. 
-2. Choose a five letter random selection of letters from the alphabet. Display the sequence while sounding the letters sequentially with a one second pause between letters. Repeat five times each time with a different random sequence. 
-3. Repeat 2 but after each sequence is sounded wait for the user to enter their guess as to which sequence they had just heard. Display the correct sequence on screen. Compare the correct sequence with the user's guess. If, after five sequences have been heard and evaluated, the user had more than 1 sequence incorrect, repeat this step.
-4. Otherwise add the next letter in the English alphanumeric alphabet to our alphabet (numbers follow letters). Sound the new character ten times with a one second pause between letters to accustom the user to the sound. Return to step 2.
+1. Begin with an alphabet of two letters, 'a'  and 'b'. Begin with standard default speed of 15 words per minute. This corresponds to an intracharacter pause of 0.08 seconds, an interchar spacing of 0.24 seconds and an intraword spacing of 0.56 seconds. 
+2. Choose a five letter random selection of letters from the alphabet. Print the sequence while sounding the letters sequentially. Repeat five times each time with a different random sequence. Pause for an interchar gap of 0.24 seconds between each letter and an intraword spacing between sequences.
+3. Repeat 2 but after each sequence is sounded wait for the user to enter their guess as to which sequence they had just heard. Display the correct sequence on screen. Compare the correct sequence with the user's guess. If, after five sequences have been heard and evaluated, the user had more than 2 characters incorrect, repeat this step.
+4. Otherwise add the next letter in the English alphanumeric alphabet to our alphabet (numbers follow letters). Sound the new character ten times with the correct spacings to accustom the user to the sound. Return to step 2.
 5. The user should be able to adjust the word per minute (WPM) speed.
 6. The user should be allowed to chose the frequency of the tone that they hear. The default will be A=440.
 7. In later iterations the user will receive input from a simulated morse-key to determine the character sent.
