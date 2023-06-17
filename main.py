@@ -1,77 +1,82 @@
 from Tone import Tone
 
-speed = int(input("Please chose WPM speed:\n"))
-value = input("Please enter a letter:\n")
+# some constants
+wps = 15            # 15 words per minute default
+di = 1.2/wps        # gaps dependent on wps
+dah = 3 * di        # dashes are 3 times longer
+intra_char = di     # gap between dots and dashes
+inter_char = 3 * di # gap between letters
+intra_word = 7 * di # gap between words
 
-# Speed calculation at 1 WPM
-di = Tone.sine(750, duration=1.2/speed)
-dah = Tone.sine(750, duration=3.6/speed)
-intra_char = Tone.sine(0, duration=1.2/speed)
-inter_char = Tone.sine(0, duration=3.6/speed)
-intra_word = Tone.sine(0, duration=8.4/speed)
+# the full morse code alphabet
+alphabet = {
+        "A": ".-",
+        "B": "-...",
+        "C": "-.-.",
+        "D": "-..",
+        "E": ".",
+        "F": "..-.",
+        "G": "--.",
+        "H": "....",
+        "I": "..",
+        "J": ".---",
+        "K": "-.-",
+        "L": ".-..",
+        "M": "--",
+        "N": "-.",
+        "O": "---",
+        "P": ".--.",
+        "Q": "--.-",
+        "R": ".-.",
+        "S": "...",
+        "T": "-",
+        "U": "..-",
+        "V": "...-",
+        "W": ".--",
+        "X": "-..-",
+        "Y": "-.--",
+        "Z": "--..",
+        "0": "-----",
+        "1": ".----",
+        "2": "..---",
+        "3": "...--",
+        "4": "....-",
+        "5": ".....",
+        "6": "-....",
+        "7": "--...",
+        "8": "---..",
+        "9": "----."
+        }
 
-v1 = str(value)
+# Play the morse code representation of the letter we ask to hear
+# from the alphabet we're using
+def sound_letter(c : str, alpha : dict):
+    character = alpha.get(c)
+    for i in character:
+        if i == '.':        # if we have a di
+            Tone.sine(440,di)
+        else:               # else we must have dah
+            Tone.sine(440,dah)
 
-if v1 == 'a':
-    Tone.sine(750, duration=di)   # di
-    Tone.sine(0, duration=intra_char)     # intra-char
-    Tone.sine(750, duration=dah)   # da
-elif v1 == 'b':
-    Tone.sine(750, duration=0.18)   # da
-    Tone.sine(0, duration=0.06)     # intra-char
-    Tone.sine(750, duration=0.06)   # di
-    Tone.sine(0, duration=0.06)     # intra-char
-    Tone.sine(750, duration=0.06)   # di
-    Tone.sine(0, duration=0.06)     # intra-char
-    Tone.sine(750, duration=0.06)   # di
-elif v1 == 'c':
-    Tone.sine(750, duration=0.18)   # da
-    Tone.sine(0, duration=0.06)     # intra-char
-    Tone.sine(750, duration=0.06)   # di
-    Tone.sine(0, duration=0.06)     # intra-char
-    Tone.sine(750, duration=0.18)   # da
-    Tone.sine(0, duration=0.06)     # intra-char
-    Tone.sine(750, duration=0.06)   # di
+        # print an appropriate gap
+        Tone.sine(0, intra_char)
 
+# Create a copy of the full alphabet containng n letters
+def new_dictionary(n : int) -> dict:
+    a = dict()
+    for x in range(n):
+        a[list(alphabet.keys())[x]] = list(alphabet.values())[x]
+    return a
 
+# main code starts here
+if __name__ == "__main__":
 
+    # start with an alphabet of only two characters
+    alphabet_length = 2
+    alpha = new_dictionary(alphabet_length)
+    print(alpha)
 
-
-# # The below PARIS test word is sent a 20 WPM
-# # This is the letter 'P'
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.06)     # intra-char
-# Tone.sine(750, duration=0.18)   # da
-# Tone.sine(0, duration=0.06)     # intra-char
-# Tone.sine(750, duration=0.18)   # da
-# Tone.sine(0, duration=0.06)     # intra-char
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.18)     # intra-char
-
-# # This is the letter 'A'
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.06)     # intra-chara
-# Tone.sine(750, duration=0.18)   # da
-# Tone.sine(0, duration=0.18)     # intra-char
-
-# # This is the letter 'R'
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.06)     # intra-char
-# Tone.sine(750, duration=0.18)   # da
-# Tone.sine(0, duration=0.06)     # intra-char
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.18)     # intra-char
-
-# # This is the letter 'I'
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.06)     # intra-char
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.18)     # intra-char
-
-# # This is the letter 'S'
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.06)     # intra-char
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.06)     # intra-char
-# Tone.sine(750, duration=0.06)   # di
-# Tone.sine(0, duration=0.42)     # intra-word
+    # sound the given letter(s)
+    for x in alpha:
+        sound_letter(x, alpha)
+        Tone.sine(0, inter_char)
