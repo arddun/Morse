@@ -54,9 +54,9 @@ def sound_letter(c : str, alpha : dict):
     character = alpha.get(c)
     for i in character:
         if i == '.':        # if we have a di
-            Tone.sine(440,di)
+            Tone.sine(750,di)
         else:               # else we must have dah
-            Tone.sine(440,dah)
+            Tone.sine(750,dah)
 
         # print an appropriate gap
         Tone.sine(0, intra_char)
