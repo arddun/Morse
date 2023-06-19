@@ -9,47 +9,52 @@ INTRA_CHAR = DI     # gap between dots and dashes
 INTER_CHAR = 3 * DI # gap between letters
 INTRA_WORD = 7 * DI # gap between words
 
-FREQUENCY = 780     # default pitch of dots and dashes
+FREQUENCY = 750     # default pitch of dots and dashes
 SILENCE = 0         # value of silence
 
 # the full morse code alphabet
 ALPHABET = {
-        "A": ".-",
-        "B": "-...",
-        "C": "-.-.",
-        "D": "-..",
-        "E": ".",
-        "F": "..-.",
-        "G": "--.",
-        "H": "....",
-        "I": "..",
-        "J": ".---",
         "K": "-.-",
-        "L": ".-..",
         "M": "--",
-        "N": "-.",
-        "O": "---",
-        "P": ".--.",
-        "Q": "--.-",
-        "R": ".-.",
-        "S": "...",
-        "T": "-",
         "U": "..-",
-        "V": "...-",
+        "R": ".-.",
+        "E": ".",
+        "S": "...",
+        "N": "-.",
+        "A": ".-",
+        "P": ".--.",
+        "T": "-",
+        "L": ".-..",
         "W": ".--",
-        "X": "-..-",
-        "Y": "-.--",
+        "I": "..",
+        ".": ".-.-.-",
+        "J": ".---",
         "Z": "--..",
-        "0": "-----",
-        "1": ".----",
-        "2": "..---",
-        "3": "...--",
-        "4": "....-",
+        "=": "-...-",
+        "F": "..-.",
+        "O": "---",
+        "Y": "-.--",
+        ",": "--..--",
+        "V": "...-",
+        "G": "--.",
         "5": ".....",
-        "6": "-....",
-        "7": "--...",
+        "/": "-..-.",
+        "Q": "--.-",
+        "9": "----.",
+        "2": "..---",
+        "H": "....",
+        "3": "...--",
         "8": "---..",
-        "9": "----."
+        "B": "-...",
+        "?": "..--..",
+        "4": "....-",
+        "7": "--...",
+        "C": "-.-.",
+        "1": ".----",
+        "D": "-..",
+        "6": "-....",
+        "0": "-----",
+        "X": "-..-"
         }
 
 # create a silent gap between letters
@@ -95,7 +100,7 @@ if __name__ == "__main__":
     random.seed(17)
 
     # start with a small alphabet
-    alphabet_length = 3
+    alphabet_length = 2 
     print('Using an alphabet of the first', alphabet_length, 'characters')
 
     alpha = new_dictionary(alphabet_length)
